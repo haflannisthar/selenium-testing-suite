@@ -5,6 +5,8 @@ import part3.com.demoqa.base.BaseTest;
 
 public class JavaScriptTest extends BaseTest {
 
+
+//    scroll and click forms
     @Test
     public void testScrollingToElement(){
         homePage.goToForms();

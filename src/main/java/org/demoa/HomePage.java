@@ -8,28 +8,35 @@ import org.openqa.selenium.By;
 
 import static Utilities.JavaScriptUtility.scrollToElementJs;
 
+import org.openqa.selenium.By;
+
+// HomePage class extends BasePage to manage interactions with the home page
 public class HomePage extends BasePage {
 
-    private By formCard=By.xpath("//div[@id='app']//h5[text()='Forms']");
-    private By  elementCard=By.xpath("//div[@id='app']//h5[text()='Elements']");
-    private By  widgetCard=By.xpath("//div[@id='app']//h5[text()='Widgets']");
+    // Locators for different cards on the home page
+    private By formCard = By.xpath("//div[@id='app']//h5[text()='Forms']");
+    private By elementCard = By.xpath("//div[@id='app']//h5[text()='Elements']");
+    private By widgetCard = By.xpath("//div[@id='app']//h5[text()='Widgets']");
 
-    public FormPage goToForms(){
-        scrollToElementJs(formCard);
-           click(formCard);
-           return new FormPage();
+    // Method to navigate to the Forms page
+    public FormPage goToForms() {
+        scrollToElementJs(formCard); // Scroll to the Forms card
+        click(formCard); // Click on the Forms card
+        return new FormPage(); // Return a new instance of FormPage
     }
 
-    public ElementPage goToElement(){
-        scrollToElementJs(elementCard);
-        click(elementCard);
-        return new ElementPage();
+    // Method to navigate to the Elements page
+    public ElementPage goToElement() {
+        scrollToElementJs(elementCard); // Scroll to the Elements card
+        click(elementCard); // Click on the Elements card
+        return new ElementPage(); // Return a new instance of ElementPage
     }
 
-    public WidgetPage GoToWidgets(){
-        scrollToElementJs(widgetCard);
-        click(widgetCard);
-        return new WidgetPage();
+    // Method to navigate to the Widgets page
+    public WidgetPage goToWidgets() {
+        scrollToElementJs(widgetCard); // Scroll to the Widgets card
+        click(widgetCard); // Click on the Widgets card
+        return new WidgetPage(); // Return a new instance of WidgetPage
     }
-
 }
+

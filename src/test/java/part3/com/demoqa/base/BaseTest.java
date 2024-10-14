@@ -18,57 +18,73 @@ import java.io.IOException;
 
 import static Utilities.Utility.setUtilityDriver;
 
+// BaseTest class serves as a foundation for other test classes
 public class BaseTest {
 
+    // WebDriver instance to control the browser
     private WebDriver driver;
+
+    // Page object instances for base page and home page
     protected BasePage basePage;
     protected HomePage homePage;
-    private String demoQA="https://demoqa.com/";
 
+    // URL for the demo application
+    private String demoQA = "https://demoqa.com/";
 
+    // Set up method that runs before any test class methods
     @BeforeClass
-    public  void setUp(){
-        driver=new ChromeDriver();
+    public void setUp() {
+        // Initialize the ChromeDriver and maximize the browser window
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
-
     }
 
+    // Method to capture a screenshot if a test fails
     @AfterMethod
-    public void takeFailedResultScreenShot(ITestResult testResult){
-        if (ITestResult.FAILURE== testResult.getStatus()){
-           TakesScreenshot screenshot= (TakesScreenshot) driver;
-          File source=screenshot.getScreenshotAs(OutputType.FILE);
+    public void takeFailedResultScreenShot(ITestResult testResult) {
+        // Check if the test failed
+        if (ITestResult.FAILURE == testResult.getStatus()) {
+            // Cast the driver to TakesScreenshot to capture the screenshot
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File source = screenshot.getScreenshotAs(OutputType.FILE);
+
             // Format the timestamp to make it safe for file names
             String timestamp = java.time.LocalDateTime.now()
                     .format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss-SSS"));
+            // Generate a file name for the screenshot
             String fileName = String.format("screenshot_%s_(%s).png", timestamp, testResult.getName());
+
+            // Set the destination path for the screenshot
             File destination = new File("D:\\SeleniumTesting\\SeleniumFirstProject\\src\\main\\resources\\screenshots\\" + fileName);
 
             try {
-                FileHandler.copy(source,destination);
+                // Copy the screenshot from source to destination
+                FileHandler.copy(source, destination);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException(e); // Handle the exception if file operations fail
             }
 
-            System.out.println("Screenshot Located at "+destination);
-
+            // Print the location of the screenshot
+            System.out.println("Screenshot Located at " + destination);
         }
     }
 
+    // Method to load the application before each test method
     @BeforeMethod
-    public void loadApplication(){
+    public void loadApplication() {
+        // Navigate to the demo QA URL
         driver.get(demoQA);
-        basePage=new BasePage();
-        basePage.setDriver(driver);
-        setUtilityDriver();
-        homePage=new HomePage();
-
+        basePage = new BasePage(); // Initialize the BasePage
+        basePage.setDriver(driver); // Set the WebDriver for the base page
+        setUtilityDriver(); // (Assuming this sets up some utility for the driver)
+        homePage = new HomePage(); // Initialize the HomePage
     }
 
+    // Tear down method that runs after all test methods in the class
     @AfterClass
     public void tearDown() throws InterruptedException {
+        // Sleep for a short duration before closing the browser
         Thread.sleep(2000);
-        driver.quit();
+        driver.quit(); // Close the browser and end the WebDriver session
     }
-
 }

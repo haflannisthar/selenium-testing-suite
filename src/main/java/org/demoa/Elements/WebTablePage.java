@@ -2,29 +2,37 @@ package org.demoa.Elements;
 
 import org.openqa.selenium.By;
 
-public class WebTablePage extends ElementPage{
+// WebTablePage class that extends ElementPage to handle interactions specific to the web table page
+public class WebTablePage extends ElementPage {
 
-    private By registrationAgeField=By.id("age");
-    private By submitButton=By.id("submit");
+    // Locator for the registration age field
+    private By registrationAgeField = By.id("age");
 
-    public void clickEdit(String email){
-        By edit= By.xpath("//div[text()='"+email+"']//following::span[@title='Edit']");
-        click(edit);
+    // Locator for the submit button
+    private By submitButton = By.id("submit");
+
+    // Method to click the Edit button for a specific email
+    public void clickEdit(String email) {
+        // XPath to find the Edit button next to the given email
+        By edit = By.xpath("//div[text()='" + email + "']//following::span[@title='Edit']");
+        click(edit); // Click on the Edit button
     }
 
-    public void setAge(String age){
-        set(registrationAgeField , age );
-
+    // Method to set the age in the registration age field
+    public void setAge(String age) {
+        set(registrationAgeField, age); // Use the set method to enter age
     }
 
-    public void clickSubmitBtn(){
-        click(submitButton);
+    // Method to click the submit button
+    public void clickSubmitBtn() {
+        click(submitButton); // Click on the submit button
     }
 
-    public String getTableAge(String email){
-        By tableAge= By.xpath("//div[text()='"+email+"']//preceding::div[1]");
-        return find(tableAge).getText();
-
+    // Method to get the age from the table for a specific email
+    public String getTableAge(String email) {
+        // XPath to find the age corresponding to the given email
+        By tableAge = By.xpath("//div[text()='" + email + "']//preceding::div[1]");
+        return find(tableAge).getText(); // Get and return the text of the age element
     }
-
 }
+

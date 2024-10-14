@@ -6,23 +6,32 @@ import part3.com.demoqa.base.BaseTest;
 
 import java.util.List;
 
+
+// SelectDropDownTest class extends BaseTest to inherit common setup and teardown functionality
 public class SelectDropDownTest extends BaseTest {
 
+    // Test method to verify the functionality of multi-select dropdowns
     @Test
-    public void testMultiSelectDropDown(){
-        var selectMenuPage=homePage.GoToWidgets().clickMenu();
-        selectMenuPage.MultiSelect("Volvo");
-        selectMenuPage.MultiSelect(1);
-        selectMenuPage.MultiSelect("Audi");
-        selectMenuPage.MultiSelect(2);
+    public void testMultiSelectDropDown() {
+        // Navigate to the widgets section and click on the multi-select menu
+        var selectMenuPage = homePage.GoToWidgets().clickMenu();
 
-        selectMenuPage.deSelectMulti("saab");
+        // Select multiple options from the dropdown
+        selectMenuPage.MultiSelect("Volvo"); // Select 'Volvo' by name
+        selectMenuPage.MultiSelect(1);        // Select the option at index 1 (e.g., 'Opel')
+        selectMenuPage.MultiSelect("Audi");   // Select 'Audi' by name
+        selectMenuPage.MultiSelect(2);        // Select the option at index 2 (e.g., 'Saab')
 
-       List<String> actualSelectedOptions=selectMenuPage.getMultiAllSelectedOptions();
+        // Deselect 'Saab' from the selected options
+        selectMenuPage.deSelectMulti("saab"); // Deselect by name (case-sensitive)
 
-        Assert.assertTrue(actualSelectedOptions.contains("Volvo"));
-        Assert.assertTrue(actualSelectedOptions.contains("Opel"));
-        Assert.assertFalse(actualSelectedOptions.contains("Saab"));
-        Assert.assertTrue(actualSelectedOptions.contains("Audi"));
+        // Retrieve all currently selected options
+        List<String> actualSelectedOptions = selectMenuPage.getMultiAllSelectedOptions();
+
+        // Assert that the expected options are selected
+        Assert.assertTrue(actualSelectedOptions.contains("Volvo"), "Expected option 'Volvo' is not selected.");
+        Assert.assertTrue(actualSelectedOptions.contains("Opel"), "Expected option 'Opel' is not selected.");
+        Assert.assertFalse(actualSelectedOptions.contains("Saab"), "Option 'Saab' should be deselected.");
+        Assert.assertTrue(actualSelectedOptions.contains("Audi"), "Expected option 'Audi' is not selected.");
     }
 }
