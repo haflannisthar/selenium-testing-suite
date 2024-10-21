@@ -3,6 +3,9 @@ package org.demoa.Elements;
 import org.demoa.HomePage;
 import org.openqa.selenium.By;
 
+import static Utilities.JavaScriptUtility.clickJS;
+import static Utilities.JavaScriptUtility.scrollToElementJs;
+
 // ElementPage class that extends HomePage and provides methods for interacting with specific elements
 public class ElementPage extends HomePage {
 
@@ -11,6 +14,12 @@ public class ElementPage extends HomePage {
 
     // Locator for the Links element in the navigation menu
     private By linkElement = By.xpath("//li[@id='item-5']/span[text()='Links']");
+
+
+    private By DynamicPropertyElement = By.xpath("//li[@id='item-8']/span[text()='Dynamic Properties']");
+
+
+
 
     // Method to click on the Web Tables element and navigate to the WebTablePage
     public WebTablePage clickWebTable() {
@@ -22,5 +31,12 @@ public class ElementPage extends HomePage {
     public LinkPage clickLinks() {
         click(linkElement); // Click on the Links element
         return new LinkPage(); // Return a new instance of LinkPage
+    }
+
+
+    public DynamicPropertyPage clickDynamicProperty(){
+        scrollToElementJs(DynamicPropertyElement);
+click(DynamicPropertyElement);
+    return new DynamicPropertyPage();
     }
 }

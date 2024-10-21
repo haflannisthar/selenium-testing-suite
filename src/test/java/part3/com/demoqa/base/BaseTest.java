@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import static Utilities.Utility.setUtilityDriver;
 
@@ -37,6 +38,19 @@ public class BaseTest {
         // Initialize the ChromeDriver and maximize the browser window
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+
+//        implicit wait
+//        do not combine implicit wait and explicit wait coz that can cause unexpected wait times
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        // Set the maximum amount of time to wait for a page to load (5 seconds).
+// If the page does not load within this time, throw an error.
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+
+// Set the maximum amount of time to wait for JavaScript or asynchronous scripts to finish (5 seconds).
+// If the script takes longer than this, throw an error.
+//        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
+
     }
 
     // Method to capture a screenshot if a test fails

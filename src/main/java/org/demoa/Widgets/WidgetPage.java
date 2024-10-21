@@ -13,6 +13,24 @@ public class WidgetPage extends HomePage {
     // Locators for the Select Menu and Date Picker menu items
     private final By selectMenuItem = By.xpath("//li[@id='item-8']/span[text()='Select Menu']");
     private final By datePickerMenuItem = By.xpath("//li[@id='item-2']//span[text()='Date Picker']");
+    private final By progressBarMenuItem = By.xpath("//li[@id='item-4']//span[text()='Progress Bar']");
+    private final By sliderMenuItem = By.xpath("//li[@id='item-3']//span[text()='Slider']");
+
+
+
+    public SliderPage clickSliderMenu(){
+        scrollToElementJs(sliderMenuItem);
+        click(sliderMenuItem);
+        return new SliderPage();
+    }
+
+
+    public ProgressBarPage clickProgressBarMenu(){
+        scrollToElementJs(progressBarMenuItem);
+        click(progressBarMenuItem);
+        return new ProgressBarPage();
+    }
+
 
     // Method to click on the Select Menu item
     public SelectMenuItem clickMenu() {

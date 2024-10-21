@@ -18,7 +18,7 @@ public class DateTest extends BaseTest {
     @Test
     public void testSelectingDate() {
         // Navigate to the widgets section and click on the date picker
-        var datePickerPage = homePage.GoToWidgets().clickDatePicker();
+        var datePickerPage = homePage.goToWidgets().clickDatePicker();
 
         // Click to select a date
         datePickerPage.clickSelectDate();

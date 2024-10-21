@@ -14,7 +14,7 @@ public class SelectDropDownTest extends BaseTest {
     @Test
     public void testMultiSelectDropDown() {
         // Navigate to the widgets section and click on the multi-select menu
-        var selectMenuPage = homePage.GoToWidgets().clickMenu();
+        var selectMenuPage = homePage.goToWidgets().clickMenu();
 
         // Select multiple options from the dropdown
         selectMenuPage.MultiSelect("Volvo"); // Select 'Volvo' by name
