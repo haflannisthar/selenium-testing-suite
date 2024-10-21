@@ -230,3 +230,35 @@
 2024-10-21 15:06:24 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
 
+2024-10-21 15:13:59 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 15:14:00 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 15:14:50 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 15:14:51 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 15:20:38 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 15:20:38 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 15:50:24 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 15:50:24 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 15:51:08 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 15:51:10 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 17:22:03 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 17:22:04 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 17:25:47 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 17:25:49 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+
+2024-10-21 17:44:06 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml"
+2024-10-21 17:44:07 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Pc\AppData\Local\JetBrains\IntelliJIdea2023.2\temp-testng-customsuite.xml
+

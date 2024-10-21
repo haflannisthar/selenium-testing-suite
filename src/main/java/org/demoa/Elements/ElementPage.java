@@ -19,7 +19,7 @@ public class ElementPage extends HomePage {
     private By DynamicPropertyElement = By.xpath("//li[@id='item-8']/span[text()='Dynamic Properties']");
 
 
-
+private By textBoxElement=By.xpath("//li[@id='item-0']//span[text()='Text Box']");
 
     // Method to click on the Web Tables element and navigate to the WebTablePage
     public WebTablePage clickWebTable() {
@@ -34,9 +34,18 @@ public class ElementPage extends HomePage {
     }
 
 
-    public DynamicPropertyPage clickDynamicProperty(){
-        scrollToElementJs(DynamicPropertyElement);
-click(DynamicPropertyElement);
-    return new DynamicPropertyPage();
+    // Method to click on the Dynamic Property element and navigate to the DynamicPropertyPage
+    public DynamicPropertyPage clickDynamicProperty() {
+        scrollToElementJs(DynamicPropertyElement); // Scroll to the Dynamic Property element to ensure it is in view
+        click(DynamicPropertyElement); // Click the Dynamic Property element
+        return new DynamicPropertyPage(); // Return a new instance of DynamicPropertyPage
     }
+
+    // Method to click on the TextBox element and navigate to the TextBoxPage
+    public TextBoxPage clickTextBox() {
+        scrollToElementJs(textBoxElement); // Scroll to the TextBox element to ensure it is in view
+        click(textBoxElement); // Click the TextBox element
+        return new TextBoxPage(); // Return a new instance of TextBoxPage
+    }
+
 }

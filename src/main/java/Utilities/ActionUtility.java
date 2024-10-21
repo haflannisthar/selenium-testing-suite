@@ -1,5 +1,6 @@
 package Utilities;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -18,5 +19,10 @@ public class ActionUtility extends Utility{
     public static void dragAndDropBy(WebElement element, int x, int y) {
         // Use the Actions class to perform drag and drop by offset, then execute the action with perform()
         act().dragAndDropBy(element, x, y).perform();
+    }
+
+
+    public static  void sendKeys(WebElement element,CharSequence value){
+        act().sendKeys(element,value).perform();
     }
 }

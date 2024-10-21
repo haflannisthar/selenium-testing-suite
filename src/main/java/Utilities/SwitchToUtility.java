@@ -41,26 +41,38 @@ public class SwitchToUtility extends Utility {
     }
 
 
-    public static void switchToFrameString(String value){
-        switchTo().frame(value);
+    // Switch to a frame using its string name or ID
+    // Parameters:
+    // - String value: the name or ID of the frame to switch to
+    public static void switchToFrameString(String value) {
+        switchTo().frame(value); // Switch to the frame with the given name or ID
     }
 
-
-    public static void switchToFrameIndex(int index){
-        switchTo().frame(index);
+    // Switch to a frame using its index
+    // Parameters:
+    // - int index: the index of the frame to switch to (0-based)
+    public static void switchToFrameIndex(int index) {
+        switchTo().frame(index); // Switch to the frame at the specified index
     }
-    public static void switchToDefaultContent(){
-        switchTo().defaultContent();
+
+    // Switch back to the main document from a frame
+    public static void switchToDefaultContent() {
+        switchTo().defaultContent(); // Switch to the main document (default content)
     }
 
-public static void switchToFrameElement(WebElement element){
-        switchTo().frame(element);
-}
+    // Switch to a frame using a WebElement representing the frame
+    // Parameters:
+    // - WebElement element: the frame element to switch to
+    public static void switchToFrameElement(WebElement element) {
+        switchTo().frame(element); // Switch to the specified frame element
+    }
 
-
-public static void switchToWindow(String handle){
-        switchTo().window(handle);
-}
+    // Switch to a specific window using its handle
+    // Parameters:
+    // - String handle: the handle of the window to switch to
+    public static void switchToWindow(String handle) {
+        switchTo().window(handle); // Switch to the window with the given handle
+    }
 
 }
 
